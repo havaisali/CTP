@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+	IMAGE SLIDER WAS TAKEN FROM WDP WEB APP
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Home Page</title>
+		<script type="text/javascript">
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "img/fireworks.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "img/lights.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "img/market.jpg"
+slideimages[3] = new Image()
+slideimages[3].src = "img/market2.jpg"
+
+</script>
+    </head>
+	<header>
+	 
+	</header>
+    <body>
+		
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+		
+	<label for="show-menu" class="show-menu">Menu</label>
+	<input type="checkbox" id="show-menu" role="button">
+		<ul id="menu">
+		<li><a href="tickets.html">Tickets</a></li>
+		<li><a href="opening.html">Opening Times</a></li>
+		<li><a href="attraction.html">Attractions</a></li>
+		<li><a href="ice.html">Ice Rink</a></li>
+		<li><a href="gallery.html">Gallery</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul> 
+	<img src="img/logo.jpg" alt="Logo" style="width:100%;height:300px;">
+	<br>
+	<img src="img/fireworks.jpg" id="slide" width="100%" height="300" />
+	
+<script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<3)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2.9 seconds
+ setTimeout("slideit()",2900)
+}
+
+slideit()
+
+</script>
+<img src="img/text.jpg" alt="Text" style="width:100%;height:300px;">
+
+<a href="http://www.ticketlineuk.com/event/cardiffs-winter-wonderland">
+<img border="0" alt="Booking" src="img/book.jpg" width="100%" height="300">
+</a>
+<img src="img/text2.jpg" alt="Text" style="width:100%;height:300px;">
+<a href="https://www.facebook.com/pages/Cardiff-Winterwonderland/181721261846042">
+<img border="0" alt="Facebook" src="img/facebook.jpg" width="100%" height="300">
+</a>
+
+<a href="#top">Back to top</a>
+</body>
+</html>
